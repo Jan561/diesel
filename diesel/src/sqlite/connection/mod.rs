@@ -236,6 +236,8 @@ impl SqliteConnection {
             Statement::prepare(raw_connection, sql, is_cached)
         })?;
 
+        println!("SQL: {:?}", statement);
+
         StatementUse::bind(statement, source)
     }
 
