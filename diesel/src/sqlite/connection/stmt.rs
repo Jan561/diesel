@@ -24,6 +24,7 @@ impl Statement {
         sql: &str,
         is_cached: PrepareForCache,
     ) -> QueryResult<Self> {
+        println!("SQL: {}", sql);
         let mut stmt = ptr::null_mut();
         let mut unused_portion = ptr::null();
         let prepare_result = unsafe {
